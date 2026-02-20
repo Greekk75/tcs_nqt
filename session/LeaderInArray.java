@@ -1,6 +1,6 @@
 package session;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class LeaderInArray {
     public static void main(String[] args) {
@@ -8,9 +8,15 @@ public class LeaderInArray {
         int n = arr.length;
         ArrayList<Integer> res = new ArrayList<>();
 
+        int max = Integer.MIN_VALUE;
 
-        for (int i =n ; i >=0 ; i--){
-
+        for (int i =n-1 ; i >=0 ; i--){
+            if(arr[i]>max){
+                max = arr[i];
+                res.add(arr[i]);
+            }
         }
+        Collections.reverse(res);
+        System.out.println(res);
     }
 }
